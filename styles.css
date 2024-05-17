@@ -1,19 +1,22 @@
 /* Variables */
 :root {
- --backCol: #5b36fd;
+ --backCol: #351e4b;
  --textCol: #e9e9e9;
+ --secondary: #a826e4;
 }
 
 /* Global Styling */
 * {
  margin: 0;
  box-sizing: border-box;
+ font-family: "Radio Canada Big", sans-serif;
 }
 
 /* Base Styling */
 body {
  background-color: var(--backCol);
  color: var(--textCol);
+ padding-bottom: 5vh;
 }
 
 /* Title Styling */
@@ -31,12 +34,68 @@ header {
 
 #main_sub {
  margin-top: 2vh;
- max-width: 50vw;
+ width: 70vw;
+ max-width: 300px;
  text-align: center;
+}
+
+/* Search Styling */
+.search_bar {
+ background-color: var(--textCol);
+ margin-top: 3.5vh;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ height: 5vh;
+ width: 55vw;
+ max-height: 35px;
+ max-width: 300px;
+ border-radius: 5vw;
+ padding: 0 3vw;
+}
+
+#search_bar {
+ background: transparent;
+ border-style: none;
+ outline: none;
+ width: 50vw;
+ color: var(--backCol);
+ font-weight: 700;
+ font-size: 0.78rem;
+}
+
+#search_bar::placeholder {
+ color: #474747;
+ font-size: 0.78rem;
 }
 
 /* Trivia Styling */
 .menu {
  display: flex;
  flex-direction: column;
+ align-items: center;
 }
+
+.categories {
+ margin-top: 1.5vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.trivia {
+ color: var(--textCol);
+ text-decoration: none;
+ background-color: var(--secondary);
+ border-radius: 1.5vw;
+ margin-top: 4vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 7vh;
+ width: 70vw;
+ max-width: 350px;
+ font-weight: 700;
+}
+
