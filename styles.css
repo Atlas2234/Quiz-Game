@@ -76,6 +76,15 @@ header {
  align-items: center;
 }
 
+.errorPrompt {
+ text-align: center;
+ font-size: 0.9rem;
+ font-weight: 400;
+ min-width: 100px;
+ width: 50vw;
+ padding-top: 3vh;
+}
+
 .categories {
  margin-top: 1.5vh;
  display: flex;
