@@ -27,6 +27,10 @@ header {
  align-items: center;
 }
 
+.title {
+ text-align: center;
+}
+
 #main_title {
  font-size: 3rem;
  text-align: center;
@@ -122,6 +126,7 @@ header {
  display: flex;
  flex-direction: column;
  margin-top: 5vh;
+ position: absolute;
 }
 
 .btn-container {
@@ -131,18 +136,43 @@ header {
  justify-content: center;
 }
 
+.diff-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.diff-title {
+ font-size: 1.2rem;
+ margin-bottom: 1vh;
+ text-align: center;
+} 
+
 .diff-btn {
- background-color: var(--backCol);
  color: var(--textCol);
  font-size: 1.2rem;
  font-weight: 700;
  text-align: center;
  border-style: none;
- width: 29vw;
- max-width: 100px;
+ width: 35vw;
+ max-width: 200px;
  min-width: 95px;
  padding-top: 1vh;
  padding-bottom: 1vh;
+ background: transparent;
+ transition: ease 0.2s;
+}
+
+.diff-btn:hover {
+  color: #7c18ff;
+  background: default;
+  background-color: var(--textCol);
+}
+
+.diff-btn:active {
+  color: #7c18ff;
+  background: default;
+  background-color: var(--textCol);
 }
 
 .btns {
@@ -152,11 +182,12 @@ header {
 }
 
 .first-diff {
+ margin-top: 2vh;
  border-bottom-style: solid;
  border-color: var(--textCol);
  display: flex;
  flex-direction: row;
- justify-content: space-between;
+ justify-content: center;
  font-size: 1.2rem;
  font-weight: 700;
  width: 25vw;
@@ -164,16 +195,30 @@ header {
  min-width: 95px;
 }
 
+.first-diff p {
+  text-align: center;
+}
+
 .drop-down {
+ /* display: none; */
  display: flex;
  flex-direction: column;
  align-items: center;
  margin-bottom: 1.5vh;
+ background-color: #7c18ff;
+ border-radius: 2vw;
+ border-style: none;
+ width: 35vw;
+ height: 0;
+ overflow: hidden;
+ max-width: 200px;
+ transition: height 0.2s;
 }
 
-.diff-title {
- font-size: 1.2rem;
- margin-bottom: 1vh;
+.show_drop_down {
+  height: 12.9vh;
+  min-height: 100px;
+  transition: height 0.2s;
 }
 
 .nav-menu {
@@ -182,7 +227,7 @@ header {
  justify-content: center;
  align-items: center;
  width: 80vw;
- margin-top: 20vh;
+ margin-top: 290px;
 }
 
 .start-btn {
@@ -195,6 +240,7 @@ header {
  height: 5vh;
  width: 8vh;
  min-width: 70px;
+ min-height: 39px;
  margin-right: 5vw;
 }
 
@@ -202,6 +248,7 @@ header {
  width: 8vh;
  height: 5vh;
  min-width: 70px;
+ min-height: 39px;
  background-color: var(--secondary);
  text-decoration: none;
  color: var(--textCol);
@@ -218,6 +265,7 @@ header {
  width: 8vh;
  min-width: 70px;
  height: 5vh;
+ min-height: 39px;
  background-color: var(--secondary);
  text-decoration: none;
  color: var(--textCol);

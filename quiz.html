@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1 class="">Trivia Title</h1>
+    <header class="trivia_title">
+      <h1 class="title">Trivia Title</h1>
     </header>
     <section class="game-menu">
       <div class="game-options">
-        <div class="diff-contianer">
+        <div class="diff-container">
           <h3 class="diff-title">Choose your difficulty:</h3>
         </div>
         <div class="btn-container">
           <div class="btns">
-            <div class="first-diff">
+            <div class="first-diff" data-id="medium">
               <p>Medium</p>
-              <p>v</p>
             </div>
             <div class="drop-down">
               <button class="diff-btn" data-id="easy">Easy</button>
@@ -35,6 +34,6 @@
         <a class="back" href="index.html"><p>Back</p></a>
       </div>
     </section>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="trivia.js"></script>
   </body>
 </html>
