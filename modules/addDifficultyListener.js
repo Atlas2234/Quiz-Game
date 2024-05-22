@@ -6,6 +6,7 @@ const addDifficultyListener = (diffButtonList, element, dropdown) => {
    const diffVal = e.currentTarget.dataset.id;
    element.dataset.id = `${diffVal}`;
    element.innerHTML = `<p>${diffDisplay}</p>`;
+   sessionStorage.setItem('challenge', e.currentTarget.dataset.id);
    // Selecting a difficulty toggles the display of the display menu so it will be hidden again
    dropdown.classList.toggle('show_drop_down');
   });

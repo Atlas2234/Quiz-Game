@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
  const titleStorage = sessionStorage.getItem('title');
  // Disaply the category as the title of the page
  mainTitle.innerHTML = `<h1 class="title">${titleStorage} Trivia</h1>`
+ sessionStorage.setItem('challenge', dropMenu.dataset.id);
  addDifficultyListener(difficulty, dropMenu, dropDownMenu);
 });
 
