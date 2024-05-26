@@ -295,3 +295,9 @@ header {
   font-size: 5rem;
   text-align: center;
 }
+
+.timer {
+  width: 45vw;
+  height: 1vh;
+  background-color: white;
+}
