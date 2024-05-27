@@ -283,6 +283,12 @@ header {
 }
 
 /* Proper Game Display */
+.gameSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .prepDisplay {
   display: flex;
   flex-direction: column;
@@ -296,8 +302,70 @@ header {
   text-align: center;
 }
 
+.gameDisplay {
+  margin-top: 30vh;
+  padding: 0 3.2vw;
+}
+
+.gameDisplay h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .timer {
   width: 45vw;
   height: 1vh;
   background-color: white;
+  margin-top: 2vh;
+}
+
+.choice {
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  flex-wrap: wrap;
+}
+
+.wrongAnswerBtn, .rightAnswerBtn {
+  margin-right: 2vw;
+  margin-top: 1vh;
+  width: 85vw;
+  min-width: 150px;
+  max-width: 500px;
+  /* height: 5vh; */
+  min-height: 50px;
+  background-color: var(--secondary);
+  text-decoration: none;
+  color: var(--textCol);
+  font-size: 1.2rem;
+  border-radius: 1.1vh;
+  border-style: solid;
+  border-color: var(--textCol);
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.wrongAnswerBtn:active,
+.rightAnswerBtn:active {
+  background-color: var(--textCol);
+  color: var(--secondary);
+}
+
+.displayCorrect {
+  margin-top: 30vh;
+  font-size: 2rem;
+}
+
+.additionalInfo {
+  text-align: center;
+  margin-top: 3vh;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 80vw;
 }

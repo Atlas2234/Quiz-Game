@@ -1,5 +1,6 @@
 import getDisplayGame from "./getDisplayGame.js";
 import beginGame from "./beginTrivia.js";
+// import displayEndScreen from "./endScreen.js";
 
 const startPrep = (data, title, container) => {
  let count = 3;
@@ -13,6 +14,7 @@ const startPrep = (data, title, container) => {
    const gameArr = getDisplayGame(data);
    // Start the main game loop
    beginGame(gameArr, container);
+   // displayEndScreen(container);
   } else if (count == 0) {
    title.innerHTML = `<h3>Go!</h3>`;
   } else {

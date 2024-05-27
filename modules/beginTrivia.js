@@ -1,3 +1,5 @@
+import displayEndScreen from "./endScreen.js";
+
 // Delay the for loop so the display of the result can be read
 const sleep = async () => {
   return new Promise(resolve => {
@@ -45,7 +47,6 @@ const pauser = (stats) => {
 
   wrongs.forEach((btn) => {
     btn.addEventListener('click', () => {
-      console.log('hello');
       stats = 0;
       clearInterval(timer);
       resolve("incorrect");
@@ -56,7 +57,8 @@ const pauser = (stats) => {
 }
 
 const beginTrivia = async (gameList, gameContainer) => {
- // Loop through the questions
+ let score = 0;
+  // Loop through the questions
  for (let i = 0; i < 10; i++) {
   // Display one question
   gameContainer.innerHTML = gameList[i];
@@ -64,9 +66,9 @@ const beginTrivia = async (gameList, gameContainer) => {
   let stats = 1;
   if (stats == 1) {
     const prom = await pauser(stats);
-    console.log(prom);
     // If the selected answer is correct
     if(prom == 'correct') {
+      score += 1;
       // Display the notification that the player was correct
       gameContainer.innerHTML = `<h3 class='displayCorrect'>Correct!</h3>`;
       // Delay the loop to display the message
@@ -76,7 +78,7 @@ const beginTrivia = async (gameList, gameContainer) => {
         // Display the notification that the player was wrong
         // Show the player the right answer
         const right = document.querySelector('.rightAnswerBtn');
-        gameContainer.innerHTML = `<h3 class='displayCorrect'>Incorrect</h3> <p>The correct answer is: ${right.textContent}</p>`;
+        gameContainer.innerHTML = `<h3 class='displayCorrect'>Incorrect</h3> <p class="additionalInfo">The correct answer is: ${right.textContent}</p>`;
         // Delay the loop to display the message
         await sleep();
     // If the countdown reached 0
@@ -84,15 +86,28 @@ const beginTrivia = async (gameList, gameContainer) => {
         // Display the notification that the time to answer was too long
         // Show the player the right answer
         const right = document.querySelector('.rightAnswerBtn');
-        gameContainer.innerHTML = `<h3 class='displayCorrect'>Time's Up</h3> <p>The correct answer was: ${right.textContent}</p>`;
+        gameContainer.innerHTML = `<h3 class='displayCorrect'>Time's Up</h3> <p class="additionalInfo">The correct answer was: ${right.textContent}</p>`;
         // Delay the loop to display the message
         await sleep();
     }
   }
-  // console.log(`the ${i}\'th iteration`);
  }
 
-//  console.log(gameList);
+//  Score keeping
+ const categoryTitle = sessionStorage.getItem('title');
+ const currentDiff = sessionStorage.getItem('challenge');
+
+ const currentScore = localStorage.getItem(`${categoryTitle}.${currentDiff}.score`);
+
+ if(currentScore && currentScore < score) {
+  localStorage.setItem(`${categoryTitle}.${currentDiff}.score`, score);
+ } else if (!currentScore){
+  localStorage.setItem(`${categoryTitle}.${currentDiff}.score`, score);
+ }
+ 
+//  Display the results screen
+ displayEndScreen(score, gameContainer);
+
 }
 
 export default beginTrivia;
