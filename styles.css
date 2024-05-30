@@ -369,3 +369,74 @@ header {
   font-weight: 700;
   width: 80vw;
 }
+
+/* Ending Screen Styles */
+.endingTitle {
+  font-size: 2rem;
+  margin-top: 30vh;
+}
+
+.endScreenContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30vh;
+}
+
+.endScreenPlayBtn {
+  width: 30vw;
+  height: 5vh;
+  min-width: 120px;
+  min-height: 39px;
+  background-color: var(--secondary);
+  text-decoration: none;
+  color: var(--textCol);
+  font-size: 1.2rem;
+  border-style: solid;
+  border-radius: 1.1vh;
+  border-color: var(--textCol);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5vw;
+}
+
+.endScreenMenuBtn {
+  width: 8vh;
+  min-width: 70px;
+  height: 5vh;
+  min-height: 39px;
+  background-color: var(--secondary);
+  text-decoration: none;
+  color: var(--textCol);
+  font-size: 1.2rem;
+  border-radius: 1.1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Display Score Styling */
+.highscoreTitle {
+  text-align: center;
+}
+
+.scoreSection {
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1vh;
+}
+
+.scoreBack {
+  margin-top: 30vh;
+}
+
