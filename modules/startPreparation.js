@@ -8,6 +8,12 @@ const startPrep = (data, title, container) => {
  const timer = setInterval(function() {
   // If the countdown is less than or equal to 0 then stop the interval and display the GO prompt
   if(count < 0) {
+
+   // Adding Audio For Trivia Game
+   let beat = new Audio('../music/testing music.mp3');
+   beat.loop = true;
+   beat.play();
+
    clearInterval(timer);
    // Get the trivia questions and answers
    // Convert to array of HTML structures where each element is a question and their answers

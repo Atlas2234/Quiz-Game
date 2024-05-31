@@ -6,6 +6,11 @@ let easyDiff = localStorage.getItem(`${currentCat}.easy.score`);
 let mediumDiff = localStorage.getItem(`${currentCat}.medium.score`);
 let hardDiff = localStorage.getItem(`${currentCat}.hard.score`);
 
+// Adding Audio For The Score Page
+const beat = new Audio('./music/highscore music.mp3');
+beat.loop = true;
+beat.play();
+
 // Check if a score is not recorded
 // If a score is not recorded then set the value to be displayed as unspecified
 if (!easyDiff) {

@@ -7,6 +7,11 @@ const dropDownMenu = document.querySelector('.drop-down');
 const difficulty = document.querySelectorAll('.diff-btn');
 
 window.addEventListener('load', () => {
+ // Adding Audio For Menu
+ let beat = new Audio('./music/submenu music.mp3');
+ beat.loop = true;
+ beat.play();
+
  // Get the title and category from the session storage
  const categoryStorage = sessionStorage.getItem('currentCategory');
  const titleStorage = sessionStorage.getItem('title');
