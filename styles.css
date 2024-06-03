@@ -50,7 +50,7 @@ header {
  display: flex;
  flex-direction: row;
  justify-content: flex-start;
- height: 5vh;
+ height: 35px;
  width: 55vw;
  max-height: 35px;
  max-width: 300px;
@@ -62,6 +62,7 @@ header {
  background: transparent;
  border-style: none;
  outline: none;
+ height: 35px;
  width: 50vw;
  color: var(--backCol);
  font-weight: 700;
@@ -73,7 +74,7 @@ header {
  font-size: 0.78rem;
 }
 
-/* Trivia Styling */
+/* Menu Styling */
 .menu {
  display: flex;
  flex-direction: column;
@@ -106,10 +107,21 @@ header {
  flex-direction: column;
  align-items: center;
  justify-content: center;
- height: 7vh;
+ height: 75px;
  width: 70vw;
  max-width: 350px;
  font-weight: 700;
+ transition: ease 0.2s;
+}
+
+.trivia:active {
+  background-color: var(--textCol);
+  color: var(--secondary);
+}
+
+.trivia:hover {
+  background-color: var(--textCol);
+  color: var(--secondary);
 }
 
 /* Trivia Page Styling */
@@ -167,6 +179,7 @@ header {
   color: #7c18ff;
   background: default;
   background-color: var(--textCol);
+  cursor: pointer;
 }
 
 .diff-btn:active {
@@ -215,6 +228,10 @@ header {
  transition: height 0.2s;
 }
 
+.first-diff:hover {
+  cursor: pointer;
+}
+
 .show_drop_down {
   height: 12.9vh;
   min-height: 100px;
@@ -224,13 +241,13 @@ header {
 .nav-menu {
  display: flex;
  flex-direction: row;
- justify-content: center;
+ justify-content: space-between;
  align-items: center;
  width: 80vw;
- margin-top: 290px;
+ margin-top: 50vh;
 }
 
-.start-btn {
+.start_btn {
   width: 8vh;
   height: 5vh;
   min-width: 70px;
@@ -246,7 +263,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 5vw;
+  transition: ease 0.2s;
 }
 
 .stats_btn {
@@ -263,7 +280,7 @@ header {
  flex-direction: column;
  align-items: center;
  justify-content: center;
- margin-right: 5vw;
+ transition: ease 0.2s;
 }
 
 .back {
@@ -280,6 +297,17 @@ header {
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ transition: ease 0.2s;
+}
+
+.start_btn:active, .stats_btn:active, .back:active  {
+  background-color: var(--textCol);
+  color: var(--secondary);
+}
+
+.start_btn:hover, .stats_btn:hover, .back:hover {
+  background-color: var(--textCol);
+  color: var(--secondary);
 }
 
 /* Proper Game Display */
@@ -357,6 +385,12 @@ header {
   color: var(--secondary);
 }
 
+.rightAnswerBtn:hover, .wrongAnswerBtn:hover {
+  background-color: var(--textCol);
+  color: var(--secondary);
+  cursor: pointer;
+}
+
 .displayCorrect {
   margin-top: 30vh;
   font-size: 2rem;
@@ -418,6 +452,16 @@ header {
   justify-content: center;
 }
 
+.endScreenPlayBtn:active, .endScreenMenuBtn:active {
+  background-color: var(--textCol);
+  color: var(--secondary);
+}
+
+.endScreenPlayBtn:hover, .endScreenMenuBtn:hover {
+  background-color: var(--textCol);
+  color: var(--secondary);
+}
+
 /* Display Score Styling */
 .highscoreTitle {
   text-align: center;
@@ -459,4 +503,476 @@ header {
 .loading {
   margin: 0 auto;
   margin-top: 35vh;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Header Styling */
+  #main_title {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  #main_sub {
+    margin-top: 2vh;
+    width: 70vw;
+    max-width: 300px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  /* Menu Styling */
+  .categories {
+    margin-top: 1.5vh;
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    place-items: center;
+    align-items: center;
+  }
+
+  .trivia {
+    color: var(--textCol);
+    text-decoration: none;
+    background-color: var(--secondary);
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 25vw;
+    font-weight: 700;
+    row-gap: 5vw;
+  }
+
+  /* Search Styling */
+  .search_bar {
+    margin-top: 3.5vh;
+    height: 70px;
+    padding: 0 2vw;
+    align-items: center;
+  }
+
+  #search_bar {
+    height: 70px;
+    width: 50vw;
+  }
+
+  /* Trivia Styling */
+  .title {
+    font-size: 3rem;
+  }
+
+  .diff-title {
+    font-size: 2rem;
+  }
+
+  .first-diff p {
+    font-size: 1.5rem
+  }
+
+  .nav-menu {
+    margin-top: 50vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+  }
+
+  .start_btn, .stats_btn, .back {
+    width: 15vw;
+    height: 50px;
+  }
+
+  /* Proper Game Display */
+  .gameDisplay h3 {
+    font-size: 2rem;
+    width: 90vw;
+  }
+
+  .choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    row-gap: 3vh;
+    column-gap: 3vw;
+  }
+
+  .wrongAnswerBtn, .rightAnswerBtn {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .displayCorrect, .displayIncorrect {
+    font-size: 3rem;
+  }
+
+  /* Ending Screen Styles */
+  .endingTitle {
+    font-size: 3rem;
+    margin-top: 30vh;
+  }
+
+  .endScreenPlayBtn, .endScreenMenuBtn {
+    height: 50px;
+    font-weight: 700;
+  }
+
+  /* Display Score Styling */
+  .highscoreTitle {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  /* Trivia Styling */
+  .title {
+    font-size: 3rem;
+  }
+
+  .diff-title {
+    font-size: 2rem;
+  }
+
+  .first-diff p {
+    font-size: 1.5rem
+  }
+
+  .nav-menu {
+    margin-top: 50vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+  }
+
+  .start_btn,
+  .stats_btn,
+  .back {
+    width: 15vw;
+    height: 50px;
+  }
+
+  /* Proper Game Display */
+  .gameDisplay h3 {
+    font-size: 2rem;
+    width: 90vw;
+  }
+
+  .choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    width: 50vw;
+    row-gap: 3vh;
+    column-gap: 3vw;
+  }
+
+  .wrongAnswerBtn,
+  .rightAnswerBtn {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .displayCorrect,
+  .displayIncorrect {
+    font-size: 3rem;
+  }
+
+  /* Ending Screen Styles */
+  .endingTitle {
+    font-size: 3rem;
+    margin-top: 30vh;
+  }
+
+  .endScreenPlayBtn,
+  .endScreenMenuBtn {
+    height: 50px;
+    font-weight: 700;
+  }
+
+  /* Display Score Styling */
+  .highscoreTitle {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  /* Header Styling */
+  #main_title {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  #main_sub {
+    margin-top: 2vh;
+    width: 70vw;
+    max-width: 300px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  /* Menu Styling */
+  .categories {
+    margin-top: 1.5vh;
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    place-items: center;
+    align-items: center;
+  }
+
+  .trivia {
+    color: var(--textCol);
+    text-decoration: none;
+    background-color: var(--secondary);
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 25vw;
+    font-weight: 700;
+    row-gap: 5vw;
+  }
+
+  /* Search Styling */
+  .search_bar {
+    margin-top: 3.5vh;
+    height: 70px;
+    padding: 0 2vw;
+    align-items: center;
+  }
+
+  #search_bar {
+    height: 70px;
+    width: 50vw;
+  }
+
+  /* Trivia Styling */
+  .title {
+    font-size: 3rem;
+  }
+
+  .diff-title {
+    font-size: 2rem;
+  }
+
+  .first-diff p {
+    font-size: 1.5rem
+  }
+
+  .nav-menu {
+    margin-top: 50vh;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+  }
+
+  .start_btn,
+  .stats_btn,
+  .back {
+    width: 15vw;
+    height: 55px;
+  }
+
+  /* Proper Game Display */
+  .gameDisplay h3 {
+    font-size: 2rem;
+    width: 90vw;
+  }
+
+  .choice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    row-gap: 3vh;
+    column-gap: 3vw;
+  }
+
+  .wrongAnswerBtn,
+  .rightAnswerBtn {
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 60px;
+  }
+
+  .displayCorrect,
+  .displayIncorrect {
+    font-size: 3rem;
+  }
+
+  /* Ending Screen Styles */
+  .endingTitle {
+    font-size: 3rem;
+    margin-top: 30vh;
+  }
+
+  .endScreenPlayBtn {
+    height: 70px;
+    font-weight: 700;
+  }
+
+  .endScreenMenuBtn {
+    height: 70px;
+    font-weight: 700;
+    width: 10vw;
+  }
+
+  /* Display Score Styling */
+  .highscoreTitle {
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1281px) {
+      /* Header Styling */
+      #main_title {
+        font-size: 4.5rem;
+        text-align: center;
+      }
+  
+      #main_sub {
+        margin-top: 3vh;
+        width: 70vw;
+        max-width: 300px;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+  
+      /* Menu Styling */
+      .categories {
+        margin-top: 1.5vh;
+        display: grid;
+        grid-template-columns: 28vw 28vw 28vw;
+        place-items: center;
+        align-items: center;
+      }
+  
+      .trivia {
+        color: var(--textCol);
+        text-decoration: none;
+        background-color: var(--secondary);
+        border-radius: 0.7vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 25vw;
+        font-weight: 700;
+        row-gap: 5vw;
+      }
+  
+      /* Search Styling */
+      .search_bar {
+        margin-top: 3.5vh;
+        min-height: 30px;
+        padding: 0 2vw;
+        align-items: center;
+        min-width: 30vw;
+      }
+  
+      #search_bar {
+        min-height: 30px;
+      }
+  
+      /* Trivia Styling */
+      .title {
+        font-size: 5rem;
+      }
+  
+      .diff-title {
+        font-size: 2rem;
+      }
+  
+      .first-diff p {
+        font-size: 1.5rem
+      }
+  
+      .nav-menu {
+        margin-top: 50vh;
+        justify-content: space-between;
+        align-items: center;
+        width: 60vw;
+      }
+  
+      .start_btn,
+      .stats_btn,
+      .back {
+        width: 15vw;
+        height: 70px;
+        font-size: 1.3rem;
+      }
+  
+      /* Proper Game Display */
+      .gameDisplay h3 {
+        font-size: 2rem;
+        width: 90vw;
+      }
+  
+      .choice {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        row-gap: 3vh;
+        column-gap: 3vw;
+      }
+  
+      .wrongAnswerBtn,
+      .rightAnswerBtn {
+        min-width: 100%;
+        min-height: 100%;
+        width: 100%;
+        height: 60px;
+      }
+  
+      .displayCorrect,
+      .displayIncorrect {
+        font-size: 3rem;
+      }
+  
+      /* Ending Screen Styles */
+      .endingTitle {
+        font-size: 3rem;
+        margin-top: 30vh;
+      }
+  
+      .endScreenPlayBtn {
+        height: 70px;
+        font-weight: 700;
+      }
+  
+      .endScreenMenuBtn {
+        height: 70px;
+        font-weight: 700;
+        width: 10vw;
+      }
+  
+      /* Display Score Styling */
+      .highscoreTitle {
+        text-align: center;
+        font-size: 5rem;
+      }
+  
+      .score {
+        font-size: 2rem;
+      }
 }
